@@ -63,16 +63,19 @@ DATABASES = {
 
 # Static files
 # Static files
-STATIC_URL = '/static/'    
+    
 
 # Where your raw images/css live right now
 # Tell Django where your original folders are
 # settings.py
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'images'),    # This covers profile, projects, and certificates
-    os.path.join(BASE_DIR, 'assets'),
-    os.path.join(BASE_DIR, 'documents'),
+    BASE_DIR / 'images',
+    BASE_DIR / 'assets',
+    BASE_DIR / 'documents',
 ]
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 # WHERE KUBERNS WILL COLLECT THEM (Mandatory for deployment)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
