@@ -63,15 +63,15 @@ DATABASES = {
 
 # Static files
 # Static files
-STATIC_URL = '/static/'
+STATIC_URL = '/static/'    
 
 # Where your raw images/css live right now
 # Tell Django where your original folders are
+# settings.py
 STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'images'),    # This covers profile, projects, and certificates
     os.path.join(BASE_DIR, 'assets'),
-    os.path.join(BASE_DIR, 'images'),
     os.path.join(BASE_DIR, 'documents'),
-    os.path.join(BASE_DIR, 'certificates'),
 ]
 
 # WHERE KUBERNS WILL COLLECT THEM (Mandatory for deployment)
