@@ -8,11 +8,10 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name="index.html"), name='index'),
     path('ecg/', TemplateView.as_view(template_name="ecg.html"), name='ecg'),
     path('rf/', TemplateView.as_view(template_name="rf.html"), name='rf'),
-    path('portfolio/', TemplateView.as_view(template_name="portfolio.html"), name='portfolio'),
-    path('circuit-solver/', TemplateView.as_view(template_name="circuit-solver.html"), name='circuit-solver'),
-    path('tracker/', TemplateView.as_view(template_name="tracker.html"), name='tracker'),
-    path('planner/', TemplateView.as_view(template_name="planner.html"), name='planner'),
-    path('debug/', TemplateView.as_view(template_name="debug.html"), name='debug'),
+    path('emotion/', TemplateView.as_view(template_name="emotion.html"), name='emotion'),
+    path('resetguard/', TemplateView.as_view(template_name="resetguard.html"), name='resetguard'),
+    path('robotics/', TemplateView.as_view(template_name="robotics.html"), name='robotics'),
+
 ]
 
 # Add these lines at the very bottom
