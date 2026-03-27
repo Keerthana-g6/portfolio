@@ -1,5 +1,7 @@
-# Static files (CSS, JavaScript, Images)
 
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
