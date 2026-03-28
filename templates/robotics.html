@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robotics & Controls Simulation - Keerthana</title>
+    <title>Robotics Control System Optimization - Keerthana</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,9 +58,11 @@
 
         .project-img { border-radius: 12px; border: 1px solid var(--border-glass); transition: all 0.4s ease; object-fit: cover; width: 100%; height: 220px; background: rgba(0,0,0,0.3); }
         .project-img:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 15px 30px rgba(0, 229, 255, 0.1); border-color: var(--accent-primary); }
+        
+        /* Adjusted specifically for the certificate */
+        .cert-img { height: auto; max-height: 400px; object-fit: contain; width: 100%; background: transparent; border: none; }
+        .cert-img:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 15px 30px rgba(0, 229, 255, 0.2); }
 
-        .cyan-graph { filter: invert(1) sepia(1) saturate(5) hue-rotate(130deg) brightness(1.2); transition: all 0.4s ease; }
-        .project-img.cyan-graph:hover { filter: invert(1) sepia(1) saturate(8) hue-rotate(130deg) brightness(1.5); box-shadow: 0 15px 30px rgba(0, 229, 255, 0.3); }
     </style>
 </head>
 
@@ -78,12 +80,13 @@
 </nav>
 
 <section class="project-hero container text-center">
-    <h1 class="project-title mb-4">Robotics & Controls <span>Simulation</span></h1>
-    <p class="fs-5 mx-auto" style="color: var(--text-muted); max-width: 700px;">Simulation-based optimization of robotic control systems to improve responsiveness and efficiency.</p>
+    <h1 class="project-title mb-4">Robotics Control System <span>Optimization</span></h1>
+    <p class="fs-5 mx-auto" style="color: var(--text-muted); max-width: 700px;">Analyzing and improving the performance of a robotic arm using control system principles. Developed as part of a virtual experience program by Johnson & Johnson (Forage).</p>
     
     <div class="mt-4">
         <span class="badge-custom">Python</span>
         <span class="badge-custom">Control Systems</span>
+        <span class="badge-custom">System Tuning</span>
         <span class="badge-custom">Simulation</span>
     </div>
     
@@ -95,49 +98,50 @@
 <section class="container py-5 mt-4">
     <div class="row justify-content-center">
         <div class="col-lg-10">
+            
+            <!-- Overview & Outcome -->
             <div class="glass-panel mb-5">
-                <h3 class="mb-4" style="font-family: var(--font-heading); font-weight: 600; color: var(--accent-primary);">Project Overview</h3>
+                <h3 class="mb-4" style="font-family: var(--font-heading); font-weight: 600; color: var(--accent-primary);">Project Overview & Outcome</h3>
                 <p style="line-height: 1.8; color: var(--text-muted);">
-                    This project was completed as part of a job simulation focused on robotics and control systems. The objective was to analyze inefficiencies in robotic arm performance and optimize system responsiveness. By leveraging Python-based diagnostic tools, system behavior was evaluated and improved through iterative simulation techniques.
+                    This project focuses on analyzing and improving the performance of a robotic arm using control system principles. The system was evaluated for latency, response time, and stability, followed by optimization using feedback mechanisms.
+                </p>
+                <p style="line-height: 1.8; color: var(--text-muted); margin-bottom: 0;">
+                    <strong class="text-white">Outcome:</strong> The optimized system demonstrated improved responsiveness, reduced delay, and better stability, validating the effectiveness of applied control strategies. This project was developed as part of a virtual experience program by Johnson & Johnson (Forage), focusing on real-world robotic system optimization challenges.
                 </p>
             </div>
 
+            <!-- Technical Implementation & Analysis -->
             <div class="glass-panel mb-5">
-                <h3 class="mb-4" style="font-family: var(--font-heading); font-weight: 600; color: var(--accent-primary);">Technical Implementation</h3>
+                <h3 class="mb-4" style="font-family: var(--font-heading); font-weight: 600; color: var(--accent-primary);">Technical Implementation & Key Features</h3>
                 
                 <div class="mb-4 p-3 rounded" style="background: rgba(0, 229, 255, 0.05); border: 1px solid rgba(0, 229, 255, 0.2);">
-                    <p class="text-white mb-2 fw-bold" style="font-family: var(--font-heading);">System Architecture Flow:</p>
+                    <p class="text-white mb-2 fw-bold" style="font-family: var(--font-heading);">Control System Workflow:</p>
                     <p class="mb-0 " style="font-family: monospace; font-size: 0.9rem;">
-                        [Sensor Input] ➔ [Control Algorithm] ➔ [Actuator Response] ➔ [Feedback Loop] ➔ [Optimized Output]
+                        [System Modeling] ➔ [Response Analysis] ➔ [Parameter Tuning] ➔ [Feedback Loop] ➔ [Optimized Stability]
                     </p>
                 </div>
 
                 <ul style="line-height: 2; color: var(--text-muted);" class="mb-0">
-                    <li><strong class="text-white">Diagnostics:</strong> Analyzed robotic control system delays using Python-based tools.</li>
-                    <li><strong class="text-white">Analysis:</strong> Identified inefficiencies in response time and general system behavior.</li>
-                    <li><strong class="text-white">Optimization:</strong> Applied control strategies to drastically improve system responsiveness.</li>
-                    <li><strong class="text-white">Validation:</strong> Validated all improvements through comprehensive simulation and iterative testing protocols.</li>
+                    <li><strong class="text-white">Simulation & Modeling:</strong> Developed using Python for simulation and analysis. Modeled system dynamics and response behavior under varying conditions.</li>
+                    <li><strong class="text-white">Performance Analysis:</strong> Evaluated system response time and overshoot. Successfully identified delays and inefficiencies in robotic motion.</li>
+                    <li><strong class="text-white">System Optimization:</strong> Applied control theory concepts such as feedback loops and system tuning. Reduced latency through targeted parameter tuning.</li>
+                    <li><strong class="text-white">Validation:</strong> Improved system stability using feedback mechanisms and visualized system performance using plots, executing performance comparisons before and after optimization.</li>
                 </ul>
             </div>
 
-            <h4 class="fw-bold mb-4 mt-5 " style="font-family: var(--font-heading);font-weight: 600; color: var(--accent-primary);">Control Visualizations</h4>
-            <div class="row g-4 mb-5">
-                <div class="col-md-4">
-                    <img src="{% static 'images/projects/robotics/diagnostic.png' %}" class="img-fluid project-img cyan-graph" alt="System Diagnostics">
-                    <p class="mt-3 fw-bold mb-1 text-white">System Diagnostics</p>
-                    <p class="small" style="color: var(--text-muted);">Figure 1: Initial delay analysis.</p>
-                </div>
-                <div class="col-md-4">
-                    <img src="{% static 'images/projects/robotics/feedback.png' %}" class="img-fluid project-img cyan-graph" alt="Feedback Loop">
-                    <p class="mt-3 fw-bold mb-1 text-white">Feedback Loop Analysis</p>
-                    <p class="small" style="color: var(--text-muted);">Figure 2: Control algorithm testing.</p>
-                </div>
-                <div class="col-md-4">
-                    <img src="{% static 'images/projects/robotics/optimized.png' %}" class="img-fluid project-img" alt="Optimized Output">
-                    <p class="mt-3 fw-bold mb-1 text-white">Optimized Output</p>
-                    <p class="small" style="color: var(--text-muted);">Figure 3: Iterative performance gains.</p>
+            <!-- Certification Section -->
+            <h4 class="fw-bold mb-4 mt-5 text-center" style="font-family: var(--font-heading);font-weight: 600; color: var(--accent-primary);">Project Certification</h4>
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-8 col-lg-7 text-center">
+                    <div class="glass-panel p-4" style="background: rgba(255, 255, 255, 0.02);">
+                        
+                        <img src="{% static 'images/projects/Robotics/johnson_certificate.pdf' %}" class="cert-img rounded" alt="Johnson & Johnson Robotics Certification">
+                        <p class="mt-4 fw-bold mb-1 text-white fs-5">Johnson & Johnson (Forage)</p>
+                        <p class="small mb-0" style="color: var(--accent-secondary);">Robotics Control System Simulation Completion</p>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
