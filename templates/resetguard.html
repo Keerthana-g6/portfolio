@@ -78,13 +78,14 @@
 </nav>
 
 <section class="project-hero container text-center">
-    <h1 class="project-title mb-4">ResetGuard <span>Secure Authentication Workflow System</span></h1>
-    <p class="fs-5 mx-auto" style="color: var(--text-muted); max-width: 700px;">Developed a structured authentication system to handle secure password reset workflows. The system integrates frontend validation with backend logic to ensure reliable credential management and prevent invalid operations..</p>
+    <h1 class="project-title mb-4">ResetGuard <span>Authentication Security Scanner</span></h1>
+    <p class="fs-5 mx-auto" style="color: var(--text-muted); max-width: 700px;">A web-based security analysis tool designed to evaluate password reset mechanisms for vulnerabilities, simulating real-world attacks to provide actionable insights based on OWASP standards.</p>
     
     <div class="mt-4">
-        <span class="badge-custom">JavaScript</span>
-        <span class="badge-custom">HTML</span>
-        <span class="badge-custom">CSS</span>
+        <span class="badge-custom">React (Vite)</span>
+        <span class="badge-custom">Node.js & Express</span>
+        <span class="badge-custom">REST API</span>
+        <span class="badge-custom">LowDB</span>
     </div>
     
     <div class="mt-5">
@@ -95,46 +96,61 @@
 <section class="container py-5 mt-4">
     <div class="row justify-content-center">
         <div class="col-lg-10">
+            
+            <!-- Overview & Outcome -->
             <div class="glass-panel mb-5">
-                <h3 class="mb-4" style="font-family: var(--font-heading); font-weight: 600; color: var(--accent-primary);">Project Overview</h3>
+                <h3 class="mb-4" style="font-family: var(--font-heading); font-weight: 600; color: var(--accent-primary);">Project Overview & Outcome</h3>
                 <p style="line-height: 1.8; color: var(--text-muted);">
-                    ResetGuard is a web-based system designed to improve the reliability of password reset operations. The system ensures secure handling of user credentials through validation mechanisms and structured workflows. It demonstrates how front-end logic can enhance authentication processes and reduce potential errors.
+                    ResetGuard is a web-based security analysis tool designed to evaluate password reset mechanisms for vulnerabilities. It simulates real-world attack scenarios and provides actionable insights based on OWASP standards. The system successfully analyzes authentication endpoints and generates structured reports highlighting vulnerabilities and recommended fixes, improving overall security awareness and defensive design.
                 </p>
             </div>
 
+            <!-- Technical Implementation -->
             <div class="glass-panel mb-5">
-                <h3 class="mb-4" style="font-family: var(--font-heading); font-weight: 600; color: var(--accent-primary);">Technical Implementation</h3>
+                <h3 class="mb-4" style="font-family: var(--font-heading); font-weight: 600; color: var(--accent-primary);">Technical Implementation & Features</h3>
                 
                 <div class="mb-4 p-3 rounded" style="background: rgba(0, 229, 255, 0.05); border: 1px solid rgba(0, 229, 255, 0.2);">
-                    <p class="text-white mb-2 fw-bold" style="font-family: var(--font-heading);">System Architecture Flow:</p>
+                    <p class="text-white mb-2 fw-bold" style="font-family: var(--font-heading);">Security Coverage Mapping:</p>
                     <p class="mb-0 " style="font-family: monospace; font-size: 0.9rem;">
-                        [User Input] → [Validation] → [Authentication Check] → [Password Update] → [Confirmation]
+                        [OWASP Top 10 (A01, A02, A05, A07)] → [Threat Classification: Low/Med/High/Crit] → [Risk Scoring System]
                     </p>
                 </div>
 
                 <ul style="line-height: 2; color: var(--text-muted);" class="mb-0">
-                    <li><strong class="text-white">Validation:</strong> Implemented comprehensive input validation using JavaScript for secure user input handling.</li>
-                    <li><strong class="text-white">Workflow Design:</strong> Designed a structured, user-friendly workflow for password reset operations.</li>
-                    <li><strong class="text-white">Reliability:</strong> Improved authentication reliability significantly through stringent front-end validation and error handling.</li>
+                    <li><strong class="text-white">Core Tech Stack:</strong> Frontend built using React (Vite) and backend developed using Node.js and Express, utilizing LowDB for lightweight data persistence.</li>
+                    <li><strong class="text-white">API & Integration:</strong> Designed a robust REST API for scan execution and result handling, featuring an integrated AI module for contextual security analysis.</li>
+                    <li><strong class="text-white">Automated Detection:</strong> Automated vulnerability detection targeting rate limiting issues, brute-force risks, as well as token strength and expiry analysis.</li>
+                    <li><strong class="text-white">Header Validation:</strong> Comprehensive security header validation (HSTS, CSP, etc.) combined with AI-generated remediation insights.</li>
                 </ul>
             </div>
 
-            <h4 class="fw-bold mb-4 mt-5 " style="font-family: var(--font-heading);font-weight: 600; color: var(--accent-primary);">Interface & Workflows</h4>
+            <!-- Future Improvements -->
+            <div class="glass-panel mb-5">
+                <h3 class="mb-4" style="font-family: var(--font-heading); font-weight: 600; color: var(--accent-primary);">Future Improvements</h3>
+                <ul style="line-height: 2; color: var(--text-muted);" class="mb-0">
+                    <li><strong class="text-white">Live Dashboard:</strong> Add a real-time attack simulation dashboard for dynamic monitoring.</li>
+                    <li><strong class="text-white">External Integrations:</strong> Integrate external security APIs to enrich threat data and validation.</li>
+                    <li><strong class="text-white">Production Scalability:</strong> Deploy the architecture with Docker for improved production scalability and environment consistency.</li>
+                </ul>
+            </div>
+
+            <!-- Visualizations -->
+            <h4 class="fw-bold mb-4 mt-5 " style="font-family: var(--font-heading);font-weight: 600; color: var(--accent-primary);">System Visualizations</h4>
             <div class="row g-4 mb-5">
                 <div class="col-md-4">
-                    <img src="{% static 'images/projects/resetguard/input.png' %}" class="img-fluid project-img cyan-graph" alt="User Input Interface">
-                    <p class="mt-3 fw-bold mb-1 text-white">Input Interface</p>
-                    <p class="small" style="color: var(--text-muted);">Figure 1: Clean data entry form.</p>
+                    <img src="{% static 'images/projects/ResetGuard/dashboard.jpeg' %}" class="img-fluid project-img cyan-graph" alt="Scanner Interface">
+                    <p class="mt-3 fw-bold mb-1 text-white">Scanner Interface</p>
+                    <p class="small" style="color: var(--text-muted);">Figure 1: React-based scan setup.</p>
                 </div>
                 <div class="col-md-4">
-                    <img src="{% static 'images/projects/resetguard/validation.png' %}" class="img-fluid project-img cyan-graph" alt="Validation Logic">
-                    <p class="mt-3 fw-bold mb-1 text-white">Validation Logic</p>
-                    <p class="small" style="color: var(--text-muted);">Figure 2: Real-time error handling.</p>
+                    <img src="{% static 'images/projects/ResetGuard/riskAnalyser.jpeg' %}" class="img-fluid project-img cyan-graph" alt="Vulnerability Detection">
+                    <p class="mt-3 fw-bold mb-1 text-white">Vulnerability Detection</p>
+                    <p class="small" style="color: var(--text-muted);">Figure 2: OWASP mapping and scoring.</p>
                 </div>
                 <div class="col-md-4">
-                    <img src="{% static 'images/projects/resetguard/confirmation.png' %}" class="img-fluid project-img" alt="Update Confirmation">
-                    <p class="mt-3 fw-bold mb-1 text-white">Update Sequence</p>
-                    <p class="small" style="color: var(--text-muted);">Figure 3: Secure password confirmation.</p>
+                    <img src="{% static 'images/projects/ResetGuard/AI.jpeg' %}" class="img-fluid project-img" alt="Remediation Insights">
+                    <p class="mt-3 fw-bold mb-1 text-white">Security Report</p>
+                    <p class="small" style="color: var(--text-muted);">Figure 3: AI-generated remediation.</p>
                 </div>
             </div>
         </div>
