@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECG Analysis Project - Keerthana</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --bg-base: #2c2525;
+            --bg-glass: rgba(34, 32, 32, 0.65); 
+            --border-glass: rgba(255, 255, 255, 0.15);
+            
+            --text-main: #ffffff;
+            --text-muted: #e2e8f0; 
+            
+            --accent-primary: #00e5ff; 
+            --accent-secondary: #00bfff; 
+            
+            --gradient-glow: linear-gradient(135deg, #00e5ff, #0077ff);
+            --gradient-text: linear-gradient(to right, #00e5ff, #ffffff, #00e5ff);
+            --smooth: cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        body { 
+            font-family: var(--font-body); 
+            background-color: var(--bg-base);
+            background-image: radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.03), transparent 45%), radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.03), transparent 45%);
+            color: var(--text-main);
+            min-height: 100vh;
+        }
+
+        .navbar { background-color: rgba(10, 10, 10, 0.8) !important; backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-glass); padding: 12px 0; transition: all 0.4s ease; }
+        .navbar-brand { font-family: var(--font-heading); font-weight: 700; color: #fff !important; letter-spacing: 1px; font-size: 1.4rem; text-transform: uppercase; }
+        .navbar-brand span { color: var(--accent-primary); }
+        .nav-link { color: var(--text-muted) !important; font-family: var(--font-heading); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; transition: color 0.3s; }
+        .nav-link:hover { color: var(--accent-primary) !important; }
+
+        .project-hero { padding: 100px 0 60px 0; border-bottom: 1px solid var(--border-glass); }
+        .project-title { font-family: var(--font-heading); font-size: 3rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .project-title span { background: var(--gradient-text); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: textShine 6s linear infinite; }
+        @keyframes textShine { to { background-position: 200% center; } }
+        
+        .glass-panel { background: var(--bg-glass); backdrop-filter: blur(25px); border: 1px solid var(--border-glass); border-radius: 20px; padding: 40px; }
+        .badge-custom { font-family: var(--font-heading); background: rgba(0, 229, 255, 0.05); color: var(--accent-primary); border: 1px solid rgba(0, 229, 255, 0.3); font-size: 12px; font-weight: 600; padding: 8px 16px; border-radius: 50px; text-transform: uppercase; margin-right: 10px; margin-bottom: 10px; display: inline-block;}
+        
+        .btn-glow { font-family: var(--font-heading); background: var(--gradient-glow); color: #fff; font-weight: 600; padding: 14px 32px; border-radius: 50px; border: none; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; box-shadow: 0 8px 20px rgba(0, 229, 255, 0.2); display: inline-block; transition: all 0.3s;}
+        .btn-glow:hover { transform: translateY(-2px); box-shadow: 0 12px 25px rgba(0, 229, 255, 0.4); color: #fff;}
+
+        .project-img { border-radius: 12px; border: 1px solid var(--border-glass); transition: all 0.4s ease; object-fit: cover; width: 100%; height: 220px; background: rgba(0,0,0,0.3); }
+        .project-img:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 15px 30px rgba(0, 229, 255, 0.1); border-color: var(--accent-primary); }
+
+        /* Hacker Cyan Graph Effect */
+        .cyan-graph { filter: invert(1) sepia(1) saturate(5) hue-rotate(130deg) brightness(1.2); transition: all 0.4s ease; }
+        .project-img.cyan-graph:hover { filter: invert(1) sepia(1) saturate(8) hue-rotate(130deg) brightness(1.5); box-shadow: 0 15px 30px rgba(0, 229, 255, 0.3); }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'index' %}">KEERTHANA<span>.</span></a>
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a href="{% url 'index' %}" class="nav-link px-3"><i class="bi bi-arrow-left me-2"></i>Back to Home</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="project-hero container text-center">
+    <h1 class="project-title mb-4">ECG Analysis <span>System</span></h1>
+    <p class="fs-5 mx-auto" style="color: var(--text-muted); max-width: 700px;">A real-time signal processing architecture engineered to detect, filter, and classify common ECG anomalies on the edge.</p>
+    
+    <div class="mt-4">
+        <span class="badge-custom">Python(Prototyping)</span>
+        <span class="badge-custom">ESP32 Microcontroller(C++)</span>
+        <span class="badge-custom">Signal Processing</span>
+    </div>
+    
+    <div class="mt-5">
+        <a href="https://github.com/Keerthana-g6" target="_blank" class="btn-glow"><i class="bi bi-github me-2"></i>View Source Code</a>
+    </div>
+</section>
+
+<section class="container py-5 mt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="glass-panel mb-5">
+                <h3 class="mb-4" style="font-family: var(--font-heading); font-weight: 600; color: var(--accent-primary);">Project Overview</h3>
+                <p style="line-height: 1.8; color: var(--text-muted);">
+                    This project focuses on bridging hardware and software to create a compact, real-time ECG monitoring system. Standard clinical equipment is often bulky and expensive. This prototype was engineered to capture live cardiac signals and identify anomalies locally using lightweight, low-cost microcontrollers, bringing critical monitoring directly to the edge.
+                </p>
+            </div>
+
+            <div class="glass-panel mb-5">
+                <h3 class="mb-4" style="font-family: var(--font-heading); font-weight: 600; color: var(--accent-primary);">Technical Implementation</h3>
+                
+                <div class="mb-4 p-3 rounded" style="background: rgba(0, 229, 255, 0.05); border: 1px solid rgba(0, 229, 255, 0.2);">
+                    <p class="text-white mb-2 fw-bold" style="font-family: var(--font-heading);">System Architecture Flow:</p>
+                    <p class="mb-0 " style="font-family: monospace; font-size: 0.9rem;">
+                        [Analog ECG Sensor] ➔ [ADC Module] ➔ [ESP32 Processing] ➔ [Python Prototyping] ➔ [C++ Implementation on ESP32] ➔ [Anomaly Output]
+                    </p>
+                </div>
+
+                <ul style="line-height: 2; color: var(--text-muted);" class="mb-0">
+                    <li><strong class="text-white">Hardware Integration:</strong> Interfaced an analog ECG sensor directly with an ESP32 microprocessor for continuous, real-time data acquisition.</li>
+                    <li><strong class="text-white">Signal Processing:</strong>Prototyped signal filtering algorithms in Python, then optimized and implemented them in C++ on ESP32 for real-time execution with &lt;20ms latency. </li>
+                    <li><strong class="text-white">Anomaly Detection:</strong> Developed targeted logic to analyze waveform structure, successfully flagging common structural ECG changes and arrhythmias on the fly with ~92% estimated detection accuracy.</li>
+                </ul>
+            </div>
+
+            <h4 class="fw-bold mb-4 mt-5 " style="font-family: var(--font-heading);font-weight: 600; color: var(--accent-primary);">Hardware & Visualizations</h4>
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <img src="{% static 'images/projects/ecg/ecg-live.png' %}" class="img-fluid project-img cyan-graph" alt="Live ECG Monitoring">
+                    <p class="mt-3 fw-bold mb-1 text-white">Live ECG Monitoring</p>
+                    <p class="small" style="color: var(--text-muted);">Figure 1: Real-time data capture.</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="{% static 'images/projects/ecg/ecg-clean.png' %}" class="img-fluid project-img cyan-graph" alt="Filtered Signal Data">
+                    <p class="mt-3 fw-bold mb-1 text-white">Filtered Signal Data</p>
+                    <p class="small" style="color: var(--text-muted);">Figure 2: Noise reduction applied.</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="{% static 'images/projects/ecg/ecg-detection.png' %}" class="img-fluid project-img" alt="Hardware Setup">
+                    <p class="mt-3 fw-bold mb-1 text-white">ESP32 Hardware Setup</p>
+                    <p class="small" style="color: var(--text-muted);">Figure 3: Microcontroller array.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="text-center py-5 border-top border-secondary mt-5">
+    <p class="small mb-0 fw-bold" style="color: var(--text-muted); letter-spacing: 1px;">© 2026 Keerthana. Engineered with Precision.</p>
+</footer>
+
+</body>
+</html>
